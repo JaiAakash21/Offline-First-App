@@ -1,0 +1,9 @@
+{
+  "name": "Offline-First App Demo",
+  "short_name": "OfflineFirst",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": []
+}

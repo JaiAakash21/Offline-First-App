@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offline-First Web App Demo</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Offline-First App</h1>
+    <div class="status-row">
+      <button id="theme-toggle" class="badge" title="Toggle theme">🌙 Theme</button>
+      <button id="load-samples-btn" class="badge" title="Insert sample data">➕ Load Samples</button>
+    </div>
+    <div class="passphrase-row">
+      <input id="passphrase" type="password" placeholder="Set/enter passphrase to unlock encrypted data" />
+      <button id="unlock-btn">Unlock</button>
+      <small class="note">Data is AES-GCM encrypted locally. No plaintext persisted.</small>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Hero Overview -->
+    <section class="hero-card">
+      <div class="hero-content">
+        <h2>📊 Overview</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value" id="overview-items">0</span>
+            <span class="stat-label">Items</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="overview-queued">0</span>
+            <span class="stat-label">Queued</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="overview-remote">0</span>
+            <span class="stat-label">Remote</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- Items CRUD -->
+    <section class="card" id="items-card">
+        <h2>📝 My Items</h2>
+        <form id="item-form" autocomplete="off">
+          <input id="item-title" placeholder="Item title..." required />
+          <textarea id="item-content" placeholder="Add description..." rows="3" required></textarea>
+          <button type="submit">➕ Add Item</button>
+        </form>
+        <ul id="items-list" class="list"></ul>
+        <div class="row">
+          <button id="undo-btn" class="btn-secondary">↶ Undo</button>
+          <button id="redo-btn" class="btn-secondary">↷ Redo</button>
+        </div>
+      </section>
+
+      <!-- Offline Search -->
+      <section class="card" id="search-card">
+        <h2>🔍 Search</h2>
+        <input id="search-input" placeholder="Search items offline..." />
+        <ul id="search-results" class="list"></ul>
+      </section>
+    </div>
+
+    <!-- Sync Timeline -->
+    <section class="card timeline-card" id="timeline-card">
+      <div class="timeline-header">
+        <h2>⏱️ Sync Timeline</h2>
+        <div class="row">
+          <button id="sync-now-btn">🔄 Sync Now</button>
+          <button id="clear-timeline-btn" class="btn-secondary">Clear</button>
+        </div>
+      </div>
+      <ol id="timeline" class="timeline"></ol>
+      <div class="legend-row">
+        <span class="legend legend-ok">✓ OK</span>
+        <span class="legend legend-merged">⚡ Merged</span>
+        <span class="legend legend-error">✗ Error</span>
+        <span class="legend legend-skip">− Skip</span>
+      </div>
+    </section>
+
+    <!-- Remote Snapshot -->
+    <section class="card" id="remote-card">
+      <h2>☁️ Remote Snapshot</h2>
+      <p class="card-desc">Server state after sync</p>
+      <ul id="remote-list" class="list"></ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>
+      Built for offline-first demo. Service Worker + IndexedDB + Web Crypto + Background Sync.
+    </small>
+  </footer>
+
+  <!-- Spinner Overlay -->
+  <div id="spinner" class="spinner" hidden>
+    <div class="spinner-dot"></div>
+    <div class="spinner-dot"></div>
+    <div class="spinner-dot"></div>
+    <div class="spinner-dot"></div>
+  </div>
+
+  <!-- Snackbar -->
+  <div id="snackbar" class="snackbar" hidden></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
