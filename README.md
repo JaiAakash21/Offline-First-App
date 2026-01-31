@@ -89,3 +89,5 @@ Open: http://localhost:3000/offline-first-app/
 ## Notes
 - Background Sync may be unavailable on some browsers; manual Sync works regardless.
 - The server is simulated in-memory for demo; replace `sync.js` with your real API calls.
+
+- https://offline-first-app-jk.vercel.app/
