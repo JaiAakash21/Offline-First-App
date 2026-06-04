@@ -1,4 +1,4 @@
-# Offline-First Web App (Hackathon Demo)
+# Offline-First Web App 
 
 This app showcases a comprehensive offline-first strategy:
 
@@ -90,4 +90,5 @@ Open: http://localhost:3000/offline-first-app/
 - Background Sync may be unavailable on some browsers; manual Sync works regardless.
 - The server is simulated in-memory for demo; replace `sync.js` with your real API calls.
 
+## LINK :
 - https://offline-first-app-jk.vercel.app/
