@@ -1,5 +1,7 @@
 # Offline-First Web App 
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE) [![Live demo](https://img.shields.io/badge/Live%20demo-online-brightgreen?style=flat-square)](https://offline-first-app-seven.vercel.app) ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=flat-square&logo=pwa&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white) ![IndexedDB](https://img.shields.io/badge/IndexedDB-blue?style=flat-square)
+
 This app showcases a comprehensive offline-first strategy:
 
 - Offline Activity Replay (record, queue, replay)
@@ -92,3 +94,11 @@ Open: http://localhost:3000/offline-first-app/
 
 ## LINK :
 - https://offline-first-app-jk.vercel.app/
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Author
+
+Built by [Jai Aakash S](https://github.com/JaiAakash21) · [Portfolio](https://jaiaakash.xyz) · [LinkedIn](https://www.linkedin.com/in/jaiaakash21)
